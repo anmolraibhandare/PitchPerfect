@@ -11,12 +11,15 @@ import AVFoundation
 
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
-    var audioRecorder: AVAudioRecorder!
+    // MARK: Outlets and Properties
     
+    var audioRecorder: AVAudioRecorder!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var stopRecordingButton: UIButton!
 
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         stopRecordingButton.isEnabled = false
@@ -27,6 +30,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         super.viewWillAppear(animated)
         print("view will appear")
     }
+    
+    // MARK: Record button is tapped
     
     @IBAction func recordAudio(_ sender: Any) {
         enableDisableButtons(state: true)
@@ -49,6 +54,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
     }
     
+    // MARK: Stop Recording button is tapped
+
     @IBAction func stopRecording(_ sender: Any) {
         enableDisableButtons(state: false)
 //        stopRecordingButton.isEnabled = false
@@ -59,6 +66,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
     }
+    
+    // MARK: AVAudioRecorder Delegate
+    // Performs segue once recording is successfull
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag{
@@ -75,6 +85,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             playSoundsVC.recordedAudioURL = recordedAudioURL
         }
     }
+    
+    // MARK: Enable/Disable Buttons
     
     func enableDisableButtons(state:Bool) {
         if (state == false){
