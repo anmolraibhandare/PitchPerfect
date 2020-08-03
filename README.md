@@ -10,11 +10,7 @@ Project Rubrics can be found [here](https://review.udacity.com/#!/rubrics/19/vie
 - Swift 5
 
 ### Screenshots
-![Home Screen](https://raw.github.com/anmolraibhandare/PitchPerfect/AppScreenshots/HomeScreen.png)
-
-![Launch Screen](https://raw.github.com/anmolraibhandare/PitchPerfect/AppScreenshots/LaunchScreen.png)
-
-![Playback Screen](https://raw.github.com/anmolraibhandare/PitchPerfect/AppScreenshots/PlaybackScreen.png)
+<img src="https://raw.githubusercontent.com/anmolraibhandare/PitchPerfect/master/AppScreenshots/Launchscreen.png" width="210 " height="450"> <img src="https://raw.githubusercontent.com/anmolraibhandare/PitchPerfect/master/AppScreenshots/HomeScreen.png" width="210 " height="450"> <img src="https://raw.githubusercontent.com/anmolraibhandare/PitchPerfect/master/AppScreenshots/Playbackscreen.png" width="210 " height="450">
 
 ### Implementation
 - PitchPerfect demonstrates a simple example of MVC (Model-View-Controller) design principles.
@@ -23,4 +19,3 @@ Project Rubrics can be found [here](https://review.udacity.com/#!/rubrics/19/vie
 - The app uses the delegate pattern and implements the `audioRecorderDidFinishRecording()` method.
 - The app does not use a Storyboard segue hardcoded to the `Stop` button. A segue from the first scene to the second is programmatically triggered via `performSegueWithIdentifier()`.
 - Plays audio files using `AVFoundation`’s `AVAudioEngine` class
-
